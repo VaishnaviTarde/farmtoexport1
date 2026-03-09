@@ -5,7 +5,7 @@ pipeline {
 
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/VaishnaviTarde/farmtoexport1.git'
+                git branch: 'main', url: 'https://github.com/VaishnaviTarde/farmtoexport1.git'
             }
         }
 
@@ -17,14 +17,13 @@ pipeline {
 
         stage('Test') {
             steps {
-                echo "No tests for static HTML project"
+                echo "No tests required"
             }
         }
 
         stage('Deploy') {
             steps {
                 echo "Deploying website"
-                sh 'cp -r * /var/www/html/'
             }
         }
 
